@@ -1,0 +1,10 @@
+# Dependencies
+/node_modules
+/.vscode
+/public/js
+
+# Config
+/src/php/config/dev.json
+
+# Dossier test
+/test
