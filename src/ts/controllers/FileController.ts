@@ -13,8 +13,6 @@ export default class FileController {
    * Télédéchargement d'un fichier JSON
    */
   async uploadJSONFile(inputFilePhp: RequestInfo) {
-    console.log("Upload File"); // Test
-
     // Si le fichier n'est pas de type JSON
     if (this._file.type !== "application/json") {
       console.log("Erreur type de fichier");
@@ -23,7 +21,6 @@ export default class FileController {
 
     // Récupération du contenu du fichier
     const fileContent:string = await this._file.text();
-    console.log(fileContent); // Test
 
     // Envoi du contenu du fichier vers le serveur
     try {

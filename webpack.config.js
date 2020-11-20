@@ -14,7 +14,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".js"],
+    fallback : {
+      "crypto": false
+    }
   },
   output: {
     publicPath: "public/js",

@@ -7,6 +7,7 @@
     public function __construct() {
       // Environnement = [dev | test | prod]
       $this->env = "dev";
+      $this->config = array();
       $this->config = $this->loadConfig($this->env.".json");
     }
 
@@ -17,5 +18,9 @@
 
     public function getDatabaseConfig(): array {
       return $this->config[0]["database"];
+    }
+
+    public function getAuthConfig(): array {
+      return $this->config[1]["authentication"];
     }
   }

@@ -6,5 +6,10 @@
       "username": "username",
       "password": "password"
     }
+  },
+  {
+    "authentication": {
+      "hash": "anrandomhashhere"
+    }
   }
 ]
