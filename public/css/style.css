@@ -1,0 +1,102 @@
+/* Variables */
+:root {
+	--color-background: #15202b;
+	--color-background-navbar: #292d3e;
+	--color-content: #bbc2cf;
+	--color-link: #bbc2cf;
+}
+
+body {
+	background: var(--color-background);
+	font-family: "Segoe UI";
+  color: var(--color-content);
+  line-height: 3em;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+}
+
+
+/* Barre de navigation */
+#navbar {
+	position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+	background: var(--color-background-navbar);
+  font-size: 18px;
+}
+
+#navbar ul {
+  clear: both;
+  max-height: 0;
+  display: flex;
+  list-style: none;
+  font-weight: 600; /* semi-bold */
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0px;
+}
+
+#navbar li :hover  {
+  background: var(--color-content);
+  color: var(--color-background-navbar);
+} 
+
+#navbar a {
+  display: block;
+  padding: 0px 30px;
+}
+
+#menuCheckbox {
+  display: none;
+}
+
+#menuCheckboxLabel {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 20px 5px;
+}
+
+/* Ouverture du menu */
+#menuCheckbox:checked ~ ul {
+  max-height: 100px;
+}
+
+#menuCheckbox:not(:checked) ~ #menuCheckboxLabel {
+  max-height: 0px;
+}
+
+
+/* Masquer l'icône "Open" quand le menu est ouvert */
+#menuCheckbox:checked ~ #menuCheckboxLabel #iconOpen {
+  display: none;
+}
+
+/* Masquer l'icône "Close" quand le menu est fermé */
+#menuCheckbox:not(:checked) ~ #menuCheckboxLabel #iconClose {
+  display: none;
+}
+
+/* Barre de navigation responsive */
+@media (min-width: 768px) {
+  #navbar ul {
+    clear: none; 
+    max-height: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0px;
+    padding-right: 5px;
+  }
+  
+  #menuCheckboxLabel {
+    display: none;
+  }
+}
+
+/* Contenu principal */
+#app {
+  margin-top: 50px;
+}
