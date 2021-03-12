@@ -26,14 +26,15 @@ export default class Controller extends Subject {
         body: JSON.stringify(data)
       });
 
-      if (response.status === 401 || response.status === 400) {
+      if (response.status === 400 || response.status === 401 || response.status === 404) {
         return Promise.reject(response.json);
       }
 
       return response;
     }
     catch (error) {
-      return error;
+      console.error(error);
+      throw error;
     }
   }
 
